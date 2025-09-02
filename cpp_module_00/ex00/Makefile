@@ -1,10 +1,9 @@
-NAME = Fixed
+NAME = megaphone
 
 CXX = c++
-
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Fixed.cpp
+SRC = megaphone.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
@@ -12,6 +11,10 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+go: re clean
+	clear
+	./$(NAME)
 
 clean:
 	rm -rf $(OBJS)
@@ -21,9 +24,4 @@ fclean: clean
 
 re: fclean all
 
-go: re
-	@make clean
-	@clear
-	@./$(NAME)
-
-.PHONY: all clean fclean re go
+.PHONY: all go fclean clean re all

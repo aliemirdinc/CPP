@@ -1,29 +1,27 @@
-NAME = Fixed
+NAME = harlFilter
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Fixed.cpp
+SRC = Harl.cpp main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-all: $(NAME)
+all:$(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	rm -rf $(OBJS)
+	@rm -rf $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 
 go: re
-	@make clean
-	@clear
-	@./$(NAME)
+	./$(NAME) DEBUG
 
 .PHONY: all clean fclean re go

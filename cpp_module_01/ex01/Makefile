@@ -1,12 +1,12 @@
-NAME = Fixed
+NAME = Zombie
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Fixed.cpp
+SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 
-OBJS = $(SRC:.cpp=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
@@ -14,16 +14,20 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	rm -rf $(OBJS)
+	@rm -rf $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
+
+do: re
+	@make clean
+	@clear
 
 go: re
 	@make clean
 	@clear
-	@./$(NAME)
+	@./Zombie
 
-.PHONY: all clean fclean re go
+.PHONY: all clean fclean re do
