@@ -6,7 +6,7 @@
 /*   By: aldinc42 <aldinc42@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 11:48:23 by aldinc42          #+#    #+#             */
-/*   Updated: 2025/09/04 12:24:04 by aldinc42         ###   ########.fr       */
+/*   Updated: 2025/09/04 12:25:11 by aldinc42         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int main() {
     diamond.beRepaired(10);
     
     std::cout << "\n=== Testing inherited special abilities ===" << std::endl;
-    diamond.guardGate();    // From ScavTrap
-    diamond.highFivesGuys(); // From FragTrap
+    diamond.guardGate();        // This ability is from ScavTrap
+    diamond.highFivesGuys();    // This ability is from FragTrap
     
     std::cout << "\n=== Testing DiamondTrap's own special ability ===" << std::endl;
     diamond.whoAmI();
