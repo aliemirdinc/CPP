@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 17:18:49 by aldinc            #+#    #+#             */
-/*   Updated: 2025/09/04 17:18:50 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/09/04 17:23:33 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Dog : public Animal {
 		~Dog();
 
 		void makeSound() const;
+		
 };
 
 #endif

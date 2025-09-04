@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 17:18:20 by aldinc            #+#    #+#             */
-/*   Updated: 2025/09/04 17:18:22 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/09/04 17:23:10 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Animal {
 		~Animal();
 
 		void makeSound() const;
+		std::string getType() const;
 
 };
 

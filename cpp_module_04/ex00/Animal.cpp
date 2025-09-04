@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 17:18:32 by aldinc            #+#    #+#             */
-/*   Updated: 2025/09/04 17:18:34 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/09/04 17:23:16 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,8 @@ Animal::Animal(const std::string& type) : type(type) {
 
 void Animal::makeSound() const {
     std::cout << "Animal sound" << std::endl;
+}
+
+std::string Animal::getType() const {
+    return type;
 }
