@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aldinc42 <aldinc42@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/04 11:46:06 by aldinc42          #+#    #+#              #
-#    Updated: 2025/09/04 11:46:08 by aldinc42         ###   ########.fr        #
+#    Created: 2025/09/04 11:47:25 by aldinc42          #+#    #+#              #
+#    Updated: 2025/09/04 11:47:27 by aldinc42         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

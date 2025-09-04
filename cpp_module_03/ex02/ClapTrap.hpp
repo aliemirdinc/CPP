@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldinc42 <aldinc42@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 11:45:49 by aldinc42          #+#    #+#             */
-/*   Updated: 2025/09/04 11:45:51 by aldinc42         ###   ########.fr       */
+/*   Created: 2025/09/04 11:47:01 by aldinc42          #+#    #+#             */
+/*   Updated: 2025/09/04 11:47:03 by aldinc42         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@
 #include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string name;
-		int hit_points;
-		int energy_points;
-		int attack_damage;
+		unsigned int hitPoints;
+		unsigned int energyPoints;
+		unsigned int attackDamage;
 
 	public:
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& other);
 		ClapTrap& operator=(const ClapTrap& other);

@@ -1,5 +1,16 @@
-#include "ClapTrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aldinc42 <aldinc42@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/04 11:45:29 by aldinc42          #+#    #+#             */
+/*   Updated: 2025/09/04 11:45:38 by aldinc42         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name) : hit_points(10), energy_points(10), attack_damage(0){
 	std::cout << "Constructor called" << std::endl;

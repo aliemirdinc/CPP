@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldinc42 <aldinc42@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 11:45:56 by aldinc42          #+#    #+#             */
-/*   Updated: 2025/09/04 11:45:58 by aldinc42         ###   ########.fr       */
+/*   Created: 2025/09/04 11:48:05 by aldinc42          #+#    #+#             */
+/*   Updated: 2025/09/04 12:03:01 by aldinc42         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main()
-{
-	ClapTrap player("ali");
+class DiamondTrap : public FragTrap, public ScavTrap {
+private:
+	//base class name
+    std::string name;
 
-	player.attack("veli");
-	player.takeDamage(2);
-	player.beRepaired(3);
-}
+public:
+	//name of Diamond Trap
+    DiamondTrap(const std::string& name);
+    ~DiamondTrap();
+
+    void whoAmI();
+    using ScavTrap::attack;
+};
+
+#endif
