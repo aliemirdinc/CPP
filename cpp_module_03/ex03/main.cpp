@@ -6,7 +6,7 @@
 /*   By: aldinc42 <aldinc42@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 11:48:23 by aldinc42          #+#    #+#             */
-/*   Updated: 2025/09/04 11:48:24 by aldinc42         ###   ########.fr       */
+/*   Updated: 2025/09/04 12:24:04 by aldinc42         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,6 @@ int main() {
         test.whoAmI();
         std::cout << "Leaving scope..." << std::endl;
     }
-    
-    std::cout << "\n=== Comparing all classes ===" << std::endl;
-    std::cout << "ClapTrap: HP=10, EP=10, AD=0" << std::endl;
-    std::cout << "ScavTrap: HP=100, EP=50, AD=20" << std::endl;
-    std::cout << "FragTrap: HP=100, EP=100, AD=30" << std::endl;
-    std::cout << "DiamondTrap: HP=100(FragTrap), EP=50(ScavTrap), AD=30(FragTrap), Attack=ScavTrap" << std::endl;
     
     std::cout << "\n=== End of main - Destructor calls ===" << std::endl;
     return 0;

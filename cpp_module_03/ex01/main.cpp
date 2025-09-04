@@ -6,7 +6,7 @@
 /*   By: aldinc42 <aldinc42@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 11:46:32 by aldinc42          #+#    #+#             */
-/*   Updated: 2025/09/04 11:46:34 by aldinc42         ###   ########.fr       */
+/*   Updated: 2025/09/04 12:21:47 by aldinc42         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,6 @@ int main() {
     
     std::cout << "\n=== Testing special ability ===" << std::endl;
     serena.guardGate();
-
-    std::cout << "\n=== Testing construction/destruction chaining ===" << std::endl;
-    {
-        std::cout << "Creating another ScavTrap..." << std::endl;
-        ScavTrap ash("Ash");
-        std::cout << "Leaving scope..." << std::endl;
-    }
     
     std::cout << "\n=== End of main - Destructor calls ===" << std::endl;
     return 0;

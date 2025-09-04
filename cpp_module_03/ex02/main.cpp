@@ -6,7 +6,7 @@
 /*   By: aldinc42 <aldinc42@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 11:47:19 by aldinc42          #+#    #+#             */
-/*   Updated: 2025/09/04 11:47:21 by aldinc42         ###   ########.fr       */
+/*   Updated: 2025/09/04 12:21:30 by aldinc42         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,33 +44,6 @@ int main() {
     std::cout << "\n=== Testing FragTrap special ability ===" << std::endl;
     clyde.highFivesGuys();
 
-    std::cout << "\n=== Comparing Stats ===" << std::endl;
-    std::cout << "ScavTrap: HP=100, EP=50, AD=20" << std::endl;
-    std::cout << "FragTrap: HP=100, EP=100, AD=30" << std::endl;
-    
-    std::cout << "\n=== Testing Energy Points Difference ===" << std::endl;
-    FragTrap energyTest("EnergyTest");
-    ScavTrap energyCompare("EnergyCompare");
-    
-    std::cout << "FragTrap can attack more times (100 energy vs 50):" << std::endl;
-    for (int i = 0; i < 5; i++) {
-        energyTest.attack("target");
-    }
-    
-    std::cout << "ScavTrap comparison:" << std::endl;
-    for (int i = 0; i < 5; i++) {
-        energyCompare.attack("target");
-    }
-
-    std::cout << "\n=== Testing construction/destruction chaining ===" << std::endl;
-    {
-        std::cout << "Creating FragTrap..." << std::endl;
-        FragTrap blinky("Blinky");
-        std::cout << "Creating ScavTrap..." << std::endl;
-        ScavTrap pinky("Pinky");
-        std::cout << "Leaving scope..." << std::endl;
-    }
-    
     std::cout << "\n=== End of main - Destructor calls ===" << std::endl;
     return 0;
 }
