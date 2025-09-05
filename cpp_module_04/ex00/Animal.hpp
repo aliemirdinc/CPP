@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 17:18:20 by aldinc            #+#    #+#             */
-/*   Updated: 2025/09/04 17:23:10 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/09/05 10:06:12 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class Animal {
 		Animal(const std::string& type);
 		Animal(const Animal& other);
 		Animal& operator=(const Animal& other);
-		~Animal();
+		virtual ~Animal();
 
-		void makeSound() const;
+		virtual void makeSound() const;
 		std::string getType() const;
 
 };
