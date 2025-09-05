@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 17:18:24 by aldinc            #+#    #+#             */
-/*   Updated: 2025/09/05 10:59:40 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/09/05 13:47:43 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ Cat& Cat::operator=(const Cat& other) {
     std::cout << "Cat assignment operator called" << std::endl;
     if (this != &other) {
         Animal::operator=(other);
-        delete CatBrain; // Eski brain'i sil
-        CatBrain = new Brain(*(other.CatBrain)); // Yeni brain oluştur (deep copy)
+        delete CatBrain; // delete ex brain
+        CatBrain = new Brain(*(other.CatBrain)); // make new brain
     }
     return *this;
 }
