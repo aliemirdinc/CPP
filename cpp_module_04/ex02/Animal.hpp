@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 10:30:00 by aldinc            #+#    #+#             */
-/*   Updated: 2025/09/05 11:19:18 by aldinc           ###   ########.fr       */
+/*   Created: 2025/09/04 17:18:20 by aldinc            #+#    #+#             */
+/*   Updated: 2025/09/05 11:15:12 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-# include "WrongAnimal.hpp"
+# include <iostream>
 
-class WrongCat : public WrongAnimal {
+class Animal {
+	protected:
+		std::string type;
 	public:
-		WrongCat();
-		WrongCat(const WrongCat& other);
-		WrongCat& operator=(const WrongCat& other);
-		~WrongCat();
+		Animal();
+		Animal(const std::string& type);
+		Animal(const Animal& other);
+		Animal& operator=(const Animal& other);
+		virtual ~Animal();
 
-		void makeSound() const;
+		virtual void makeSound() const = 0;
+		std::string getType() const;
+
 };
 
 #endif
