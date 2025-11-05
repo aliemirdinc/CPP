@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:51:29 by aldinc            #+#    #+#             */
-/*   Updated: 2025/11/05 17:39:04 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/11/05 17:40:59 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,8 @@ int Bureaucrat::getGrade() const {
 }
 
 void Bureaucrat::incrementGrade() {
-    if (this->_grade - 1 < 1) {
+    if (this->_grade - 1 < 1)
         throw Bureaucrat::GradeTooHighException();
-    }
     std::cout << this->_name << "'s grade has been incremented, old grade is: " << this->_grade;
     this->_grade--;
     std::cout << ", updated grade is: " << this->_grade << std::endl;
