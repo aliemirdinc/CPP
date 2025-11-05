@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:53:12 by aldinc            #+#    #+#             */
-/*   Updated: 2025/11/05 17:43:48 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/11/05 17:44:36 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ int main()
     b9 = b7;
     std::cout << "Assigned b9 = b7: " << b9 << std::endl;
     std::cout << "(Note: Name 'Deep Thought' should remain due to const _name)" << std::endl;
-
 
     std::cout << "\n--- All tests finished ---" << std::endl;
     return 0;
