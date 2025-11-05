@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:53:06 by aldinc            #+#    #+#             */
-/*   Updated: 2025/11/05 15:30:19 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/11/05 15:59:01 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ class Bureaucrat {
 	public:
 		Bureaucrat();
 		Bureaucrat(const Bureaucrat& other);
+		Bureaucrat(const std::string name, int grade);
 		Bureaucrat &operator=(const Bureaucrat& other);
 		~Bureaucrat();
 
-		Bureaucrat(const std::string name, int grade);
-		
 		std::string getName() const;
 		int getGrade() const;
 
