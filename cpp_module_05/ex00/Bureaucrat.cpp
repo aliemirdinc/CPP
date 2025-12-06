@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:51:29 by aldinc            #+#    #+#             */
-/*   Updated: 2025/11/05 17:40:59 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/12/06 14:32:00 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ void Bureaucrat::decrementGrade() {
     if (this->_grade + 1 > 150) {
         throw Bureaucrat::GradeTooLowException();
     }
-    std::cout << this->_name << " 'in notu düşürülüyor. Eski not: " << this->_grade;
+    std::cout << this->_name << "'s grade has been decremented, old grade is: " << this->_grade;
     this->_grade++;
-    std::cout << ", Yeni not: " << this->_grade << std::endl;
+    std::cout << ", updated grade is: " << this->_grade << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {

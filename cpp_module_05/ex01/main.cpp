@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:54:55 by aldinc            #+#    #+#             */
-/*   Updated: 2025/11/05 18:55:01 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/12/06 16:34:05 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ int main()
         std::cout << b2 << std::endl;
         std::cout << f5 << std::endl;
         
-        b2.signForm(f5); // This should fail and print "couldn't sign"
+        b2.signForm(f5);
         
-        std::cout << f5 << std::endl; // Should still show "Signed: No"
+        std::cout << f5 << std::endl;
     }
     catch (std::exception & e)
     {

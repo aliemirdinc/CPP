@@ -6,11 +6,11 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:51:29 by aldinc            #+#    #+#             */
-/*   Updated: 2025/12/06 15:46:38 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/12/06 17:56:41 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {
@@ -80,18 +80,29 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
     return os;
 }
 
-void Bureaucrat::signForm(Form& form) const
+void Bureaucrat::signForm(AForm& Aform) const
 {
 
     try
     {
-        form.beSigned(*this);
-        std::cout << this->_name << " signed " << form.getName() << std::endl;
+        Aform.beSigned(*this);
+        std::cout << this->_name << " signed " << Aform.getName() << std::endl;
     }
     catch (std::exception & e)
     {
 
-        std::cout << this->_name << " couldn't sign " << form.getName() 
+        std::cout << this->_name << " couldn't sign " << Aform.getName() 
+                  << " because " << e.what() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const & form) const {
+    try {
+        form.execute(*this);
+        std::cout << this->_name << " executed " << form.getName() << std::endl;
+    }
+    catch (std::exception & e) {
+        std::cout << this->_name << " couldn't execute " << form.getName() 
                   << " because " << e.what() << std::endl;
     }
 }
