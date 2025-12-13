@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:30:15 by aldinc            #+#    #+#             */
-/*   Updated: 2025/11/05 18:41:02 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/12/13 15:31:00 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 Form::Form() : _name("Default Form"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {
 }
 
-Form::Form(const Form& other) 
+Form::Form(const Form& other)
     : _name(other._name), 
       _isSigned(other._isSigned), 
       _gradeToSign(other._gradeToSign), 

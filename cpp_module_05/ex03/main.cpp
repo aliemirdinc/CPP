@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 17:58:54 by aldinc            #+#    #+#             */
-/*   Updated: 2025/12/06 18:26:44 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/12/13 13:11:35 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 int main()
 {
-    std::srand(time(NULL));
+    std::srand(std::time(0));
 
     std::cout << "\n========== TEST 1: SHRUBBERY CREATION ==========\n" << std::endl;
     try {

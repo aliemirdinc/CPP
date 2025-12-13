@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 18:09:21 by aldinc            #+#    #+#             */
-/*   Updated: 2025/12/06 18:18:57 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/12/13 13:08:40 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Intern {
         Intern();
         Intern(const Intern& other);
         Intern &operator=(const Intern& other);
-        virtual ~Intern();
+        ~Intern();
     
         AForm* makeForm(std::string name, std::string target);
 

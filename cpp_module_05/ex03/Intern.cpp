@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 18:09:23 by aldinc            #+#    #+#             */
-/*   Updated: 2025/12/06 18:21:13 by aldinc           ###   ########.fr       */
+/*   Updated: 2025/12/13 16:00:09 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,7 @@ const char* Intern::FormNotFoundException::what() const throw() {
 }
 
 AForm* Intern::makeForm(std::string name, std::string target) {
-    
-    // 1. Form isimlerini tutan dizi
+
     std::string formNames[] = {
         "shrubbery creation",
         "robotomy request",
