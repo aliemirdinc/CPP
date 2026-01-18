@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/19 19:31:33 by aldinc            #+#    #+#              #
-#    Updated: 2026/01/18 17:17:14 by aldinc           ###   ########.fr        #
+#    Created: 2026/01/18 17:43:40 by aldinc            #+#    #+#              #
+#    Updated: 2026/01/18 19:39:25 by aldinc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScalarConverter
+NAME = Serialization
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = ScalarConverter.cpp main.cpp
+SRCS =  Serializer.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

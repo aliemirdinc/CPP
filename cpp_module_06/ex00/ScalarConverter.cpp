@@ -32,7 +32,7 @@ void ScalarConverter::convert(const std::string &literal) {
 	int     i = 0;
 	float   f = 0.0f;
 	double  d = 0.0;
-	
+
 	bool is_char = false;
 	bool is_int = false;
 	bool is_float = false;
@@ -77,7 +77,7 @@ void ScalarConverter::convert(const std::string &literal) {
 	}
 	else if (is_int) {
 		i = static_cast<int>(d);
-		c = static_cast<char>(i);
+		c = static_cast<char>(d);
 		f = static_cast<float>(d);
 	}
 	else if (is_float) {
@@ -90,7 +90,7 @@ void ScalarConverter::convert(const std::string &literal) {
 		i = static_cast<int>(d);
 		c = static_cast<char>(d);
 	}
-	
+
 	std::cout << "char: ";
 	if (isPseudoLiteral(literal) || d < 0 || d > 127 || std::isnan(d)) {
 		std::cout << "impossible";
