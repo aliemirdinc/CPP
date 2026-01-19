@@ -6,17 +6,17 @@
 #    By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/19 18:02:45 by aldinc            #+#    #+#              #
-#    Updated: 2026/01/19 18:02:47 by aldinc           ###   ########.fr        #
+#    Updated: 2026/01/19 18:38:43 by aldinc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Serialization
+NAME = Base
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =  Serializer.cpp main.cpp
+SRCS =  Base.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
