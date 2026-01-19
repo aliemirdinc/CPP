@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/18 17:43:40 by aldinc            #+#    #+#              #
-#    Updated: 2026/01/19 18:02:55 by aldinc           ###   ########.fr        #
+#    Created: 2026/01/19 18:02:45 by aldinc            #+#    #+#              #
+#    Updated: 2026/01/19 18:02:47 by aldinc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,4 +37,4 @@ go: re
 	@./$(NAME)
 	@make fclean
 
-.PHONY: all clean fclean re go
+.PHONY: all clean fclean re
