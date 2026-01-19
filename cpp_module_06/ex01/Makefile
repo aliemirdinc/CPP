@@ -6,7 +6,7 @@
 #    By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/18 17:43:40 by aldinc            #+#    #+#              #
-#    Updated: 2026/01/18 19:39:25 by aldinc           ###   ########.fr        #
+#    Updated: 2026/01/19 18:00:45 by aldinc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,5 +32,9 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
+
+go: re
+	@./$(NAME)
+	@make fclean
 
 .PHONY: all clean fclean re

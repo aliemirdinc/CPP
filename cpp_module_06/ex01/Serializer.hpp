@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 17:25:09 by aldinc            #+#    #+#             */
-/*   Updated: 2026/01/18 17:41:32 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/01/19 17:51:09 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SERIALIZER_HPP
 
 # include <stdint.h>
-# include <Data.hpp>
+# include "Data.hpp"
 
 class Serializer {
 	private:
