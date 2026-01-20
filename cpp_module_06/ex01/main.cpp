@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:26:03 by aldinc            #+#    #+#             */
-/*   Updated: 2026/01/19 17:57:45 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/01/20 18:34:52 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 
 
 int main(void) {
-	Data *d;
-	uintptr_t u;
+	Data *d = new Data();
+	uintptr_t u = 0;
 
-	d = new Data();
 	d->content = 1;
 	d->id = 0;
 	std::cout << "original address= " <<  d << std::endl;

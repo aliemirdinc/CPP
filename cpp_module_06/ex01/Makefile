@@ -6,7 +6,7 @@
 #    By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/18 17:43:40 by aldinc            #+#    #+#              #
-#    Updated: 2026/01/19 18:02:55 by aldinc           ###   ########.fr        #
+#    Updated: 2026/01/20 18:31:55 by aldinc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Serialization
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS =  Serializer.cpp main.cpp
 

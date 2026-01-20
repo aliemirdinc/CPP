@@ -16,7 +16,6 @@
 #include <cstdlib>
 #include <climits>
 #include <cmath>
-#include <iomanip>
 
 ScalarConverter::ScalarConverter() {}
 ScalarConverter::ScalarConverter(const ScalarConverter &copy) { (void)copy; }
@@ -39,7 +38,7 @@ void ScalarConverter::convert(const std::string &literal) {
 	bool is_double = false;
 	bool impossible = false;
 
-	if (literal.length() == 1 && !std::isdigit(literal[0]) && std::isprint(literal[0])) {
+	if (literal.length() == 1 && !std::isdigit(literal[0])) {
 		c = literal[0];
 		is_char = true;
 	}
@@ -61,14 +60,6 @@ void ScalarConverter::convert(const std::string &literal) {
 			impossible = true;
 		}
 	}
-	
-	if (impossible) {
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: impossible" << std::endl;
-		std::cout << "double: impossible" << std::endl;
-		return;
-	}
 
 	if (is_char) {
 		i = static_cast<int>(c);
@@ -89,6 +80,13 @@ void ScalarConverter::convert(const std::string &literal) {
 		f = static_cast<float>(d);
 		i = static_cast<int>(d);
 		c = static_cast<char>(d);
+	}
+	else if (impossible) {
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return;
 	}
 
 	std::cout << "char: ";
