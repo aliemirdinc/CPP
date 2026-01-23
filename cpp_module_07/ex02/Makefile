@@ -6,17 +6,17 @@
 #    By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/21 08:41:12 by aldinc            #+#    #+#              #
-#    Updated: 2026/01/21 08:41:14 by aldinc           ###   ########.fr        #
+#    Updated: 2026/01/23 12:19:44 by aldinc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Iter
+NAME = Array
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =  iter.cpp main.cpp
+SRCS =  main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
