@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 07:13:52 by aldinc            #+#    #+#             */
-/*   Updated: 2026/01/23 11:16:26 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/01/23 11:59:10 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ int main() {
 
 	std::cout << "Const Array: ";
 	::iter(constArray, constLen, printElementConst<int>);
+	std::cout << std::endl;
+
+	float float_arr[] = {1.2, 2.4, 12.32, 89.16};
+	size_t float_len = sizeof(float_arr) / sizeof(float);
+	std::cout << "Float Array: ";
+	::iter(float_arr, float_len, printElement<float>);
 	std::cout << std::endl;
 
 	return 0;
