@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 08:59:03 by aldinc            #+#    #+#             */
-/*   Updated: 2026/01/23 15:39:53 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/01/23 16:38:18 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main() {
 		std::cout << "Original[1]: " << numbers[1] << std::endl;
 		std::cout << "Original[2]: " << numbers[2] << std::endl;
 		std::cout << "Original[3]: " << numbers[3] << std::endl;
-		std::cout << "Original[4]: " << numbers[5] << std::endl;
+		std::cout << "Original[4]: " << numbers[4] << std::endl;
 		std::cout << "Copy[0]: " << copy[0] << std::endl;
 
 		std::cout << "Testing exception..." << std::endl;
