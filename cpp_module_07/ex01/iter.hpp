@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 04:37:02 by aldinc            #+#    #+#             */
-/*   Updated: 2026/01/21 07:23:00 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/01/23 11:02:03 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void printElement(T &element) {
 
 template  < typename T>
 void printElementConst(const T &printElement) {
-	std::cout << element << " ";
+	std::cout << printElement << " ";
 }
 
 #endif

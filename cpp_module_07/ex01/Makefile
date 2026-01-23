@@ -6,7 +6,7 @@
 #    By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/21 04:36:30 by aldinc            #+#    #+#              #
-#    Updated: 2026/01/21 07:13:41 by aldinc           ###   ########.fr        #
+#    Updated: 2026/01/23 10:59:51 by aldinc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =  iter.cpp main.cpp
+SRCS =  main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
