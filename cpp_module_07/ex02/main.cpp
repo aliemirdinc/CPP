@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 08:59:03 by aldinc            #+#    #+#             */
-/*   Updated: 2026/01/23 14:52:21 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/01/23 15:39:53 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ int main() {
 		copy[0] = 42;
 
 		std::cout << "Original[0]: " << numbers[0] << std::endl;
+		std::cout << "Original[1]: " << numbers[1] << std::endl;
+		std::cout << "Original[2]: " << numbers[2] << std::endl;
+		std::cout << "Original[3]: " << numbers[3] << std::endl;
+		std::cout << "Original[4]: " << numbers[5] << std::endl;
 		std::cout << "Copy[0]: " << copy[0] << std::endl;
 
 		std::cout << "Testing exception..." << std::endl;
@@ -43,8 +47,8 @@ int main() {
 		copy2[0] = 42;
 
 		std::cout << "Original[0]: " << fl_nums[0] << std::endl;
-		std::cout << "Original[0]: " << fl_nums[1] << std::endl;
-		std::cout << "Original[0]: " << fl_nums[2] << std::endl;
+		std::cout << "Original[1]: " << fl_nums[1] << std::endl;
+		std::cout << "Original[2]: " << fl_nums[2] << std::endl;
 		std::cout << "Copy2[0]: " << copy2[0] << std::endl;
 
 		std::cout << "Testing exception..." << std::endl;
