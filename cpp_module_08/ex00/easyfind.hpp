@@ -10,14 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND
-# define EASYFIND
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 # include <iostream>
 # include <vector>
 # include <algorithm>
+# include <list>
 
 class NotFoundException : public std::exception {
 	public:
+		NotFoundException() {}
+		NotFoundException(const NotFoundException& other) : std::exception(other) {}
+		NotFoundException& operator=(const NotFoundException& other) {
+			if (this != &other)
+				std::exception::operator=(other);
+			return *this;
+		}
+		virtual ~NotFoundException() throw() {}
+
 		virtual const char* what() const throw() {
 			return "Element not found in container";
 		}
@@ -26,6 +36,15 @@ class NotFoundException : public std::exception {
 template <typename T>
 typename T::iterator easyfind(T &container, int to_find) {
 	typename T::iterator it = std::find(container.begin(), container.end(), to_find);
+	if (it == container.end()) {
+		throw NotFoundException();
+	}
+	return it;
+}
+
+template <typename T>
+typename T::const_iterator easyfind(const T &container, int to_find) {
+	typename T::const_iterator it = std::find(container.begin(), container.end(), to_find);
 	if (it == container.end()) {
 		throw NotFoundException();
 	}
