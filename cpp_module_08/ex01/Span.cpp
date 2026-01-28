@@ -46,7 +46,7 @@ int Span::longestSpan() {
 }
 
 int Span::shortestSpan() {
-	int min = 0;
+	int min;
 	if (_numbers.size() < 2)
 		throw std::runtime_error("too few numbers inside the container");
 
