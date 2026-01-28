@@ -25,6 +25,13 @@ int main() {
         std::cout << e.what() << std::endl;
     }
 
+    const std::vector<int> const_v;
+    try {
+        std::cout << "Const vector test: " << *easyfind(const_v, 10) << " found." << std::endl;
+    } catch (const std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+
     std::list<int> l;
     l.push_back(100);
     l.push_back(200);
