@@ -15,6 +15,7 @@
 # include <iostream>
 # include <vector>
 # include <algorithm>
+# include <exception>
 
 class Span {
 	private:
@@ -27,8 +28,14 @@ class Span {
 		~Span();
 
 		void addNumber(int number);
-		void shortestSpan(Span numbers);
-		void longestSpan(Span numbers);
+		template <typename T>
+        void addNumber(T begin, T end) {
+            if (_numbers.size() + std::distance(begin, end) > _n)
+                throw std::runtime_error("Span limit exceeded!");
+            _numbers.insert(_numbers.end(), begin, end);
+        }
+		int shortestSpan();
+		int longestSpan();
 
 };
 
