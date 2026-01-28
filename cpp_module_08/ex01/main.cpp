@@ -25,6 +25,22 @@ int main(void) {
     std::cout << sp.longestSpan() << std::endl;
 
     return 0;
+
+	// std::vector<int> numbers;
+    // for (int i = 0; i < 10000; i++)
+    //     numbers.push_back(i);
+
+    // Span sp2 = Span(10000);
+    // try {
+    //     sp2.addNumber(numbers.begin(), numbers.end());
+        
+    //     std::cout << "Shortest Span: " << sp2.shortestSpan() << std::endl;
+    //     std::cout << "Longest Span: " << sp2.longestSpan() << std::endl;
+    // } catch (const std::exception &e) {
+    //     std::cerr << e.what() << std::endl;
+    // }
+
+
 	// Span sp = Span(9);
 
 	// try
