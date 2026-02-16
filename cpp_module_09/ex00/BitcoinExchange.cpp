@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:55:47 by aldinc            #+#    #+#             */
-/*   Updated: 2026/02/16 18:22:25 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/02/16 18:32:14 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ BitcoinExchange::~BitcoinExchange() {}
 // --- Helper Functions ---
 //clears string first and last part empties
 std::string BitcoinExchange::_trim(const std::string& str) {
-	size_t first = str.find_first_not_of(" \t");
-	if (std::string::npos == first) return str;
-	size_t last = str.find_last_not_of(" \t");
+	size_t first = str.find_first_not_of(" \t\r\n");
+	if (std::string::npos == first) return "";
+	size_t last = str.find_last_not_of(" \t\r\n");
 	return str.substr(first, (last - first + 1));
 }
 
