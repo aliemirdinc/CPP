@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:55:55 by aldinc            #+#    #+#             */
-/*   Updated: 2026/02/16 16:31:17 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/02/16 18:40:24 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <map>
 # include <string>
 # include <fstream>
-# include <sstream>
 # include <cstdlib>
 
 class BitcoinExchange {
