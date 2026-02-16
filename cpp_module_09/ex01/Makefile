@@ -6,7 +6,7 @@
 #    By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid Date        by ldinc             #+#    #+#              #
-#    Updated: 2026/02/16 18:35:53 by aldinc           ###   ########.fr        #
+#    Updated: 2026/02/16 18:51:31 by aldinc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = BitcoinExchange.cpp main.cpp
+SRCS = RPN.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
