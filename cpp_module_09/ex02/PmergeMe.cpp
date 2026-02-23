@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:15:12 by aldinc            #+#    #+#             */
-/*   Updated: 2026/02/21 14:42:02 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/02/23 17:02:37 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ void PmergeMe::mergeInsertionSortVector(std::vector<int>& arr) {
 
 	// Build chains
 	std::vector<int> mainChain;
-	std::vector<int> pendingElements;
 
 	mainChain = largerElements;
 
@@ -106,7 +105,7 @@ void PmergeMe::mergeInsertionSortVector(std::vector<int>& arr) {
 				pairs.erase(pairs.begin() + j);
 				break;
 			}
-		 }
+		}
 	}
 
 	// Insert with Jacobsthal
@@ -227,10 +226,9 @@ void PmergeMe::mergeInsertionSortDeque(std::deque<int>& arr) {
 // -----------------------------------------------------------------------------
 
 void PmergeMe::process(int argc, char **argv) {
-	std::vector<int> vec;
-	std::deque<int> deq;
+	std::vector<int> input_data;
 
-	// Parse input
+	// Parse input only once to validate and store in a temporary buffer
 	for (int i = 1; i < argc; ++i) {
 		std::string s = argv[i];
 		for (size_t j = 0; j < s.length(); ++j) {
@@ -241,32 +239,45 @@ void PmergeMe::process(int argc, char **argv) {
 		if (val < 0 || val > 2147483647)
 			 throw std::runtime_error("Error: Input number out of integer range.");
 		
-		vec.push_back(static_cast<int>(val));
-		deq.push_back(static_cast<int>(val));
+		input_data.push_back(static_cast<int>(val));
 	}
 
 	// Display before
 	std::cout << "Before: ";
-	size_t printLimit = (vec.size() > 5) ? 5 : vec.size();
+	size_t printLimit = (input_data.size() > 5) ? 5 : input_data.size();
 	for (size_t i = 0; i < printLimit; ++i) {
-		std::cout << vec[i] << " ";
+		std::cout << input_data[i] << " ";
 	}
-	if (vec.size() > 5) std::cout << "[...]";
+	if (input_data.size() > 5) std::cout << "[...]";
 	std::cout << std::endl;
 
-	// Sort vector
+	// --- MEASURE VECTOR ---
+	// Time includes: copying data to container + sorting
+	std::vector<int> vec;
 	clock_t startVec = clock();
+	
+	// Data management: transfer to vector
+	vec = input_data; 
+	// Sorting
 	mergeInsertionSortVector(vec);
+	
 	clock_t endVec = clock();
 	double timeVec = static_cast<double>(endVec - startVec) / CLOCKS_PER_SEC * 1000000;
 
-	// Sort deque
+	// --- MEASURE DEQUE ---
+	// Time includes: copying data to container + sorting
+	std::deque<int> deq;
 	clock_t startDeq = clock();
+	
+	// Data management: transfer to deque
+	deq.assign(input_data.begin(), input_data.end());
+	// Sorting
 	mergeInsertionSortDeque(deq);
+	
 	clock_t endDeq = clock();
 	double timeDeq = static_cast<double>(endDeq - startDeq) / CLOCKS_PER_SEC * 1000000;
 
-	// Display after
+	// Display after (using vector results)
 	std::cout << "After:  ";
 	for (size_t i = 0; i < printLimit; ++i) {
 		std::cout << vec[i] << " ";
