@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 18:56:28 by aldinc            #+#    #+#             */
-/*   Updated: 2026/02/16 19:01:07 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/02/20 16:31:13 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,25 @@ void RPN::run(const std::string& expression) {
 	std::stack<int> s;
 
 	for (size_t i = 0; i < expression.length(); i++) {
-		// skip first empytinesses
+		// Skip whitespace
 		if (expression[i] == ' ') continue;
 
-		// is it between 0 - 9
+		// Digit (0-9)
 		if (isdigit(expression[i])) {
-			int num = expression[i] - '0'; // cast char to int
+			int num = expression[i] - '0';
 			s.push(num);
 		}
-		// is it an operator
+		// Operator
 		else if (expression[i] == '+' || expression[i] == '-' || 
 				 expression[i] == '*' || expression[i] == '/') {
-			
-			// we need at least two number
+
+			// Need at least two numbers
 			if (s.size() < 2) {
 				std::cout << "Error" << std::endl;
 				return;
 			}
 
-			// stack works with LIFO
+			// LIFO order
 			int val2 = s.top(); s.pop();
 			int val1 = s.top(); s.pop();
 
@@ -56,20 +56,20 @@ void RPN::run(const std::string& expression) {
 			else if (expression[i] == '*') s.push(val1 * val2);
 			else if (expression[i] == '/') {
 				if (val2 == 0) {
-					std::cout << "Error" << std::endl; // div to zero error
+					std::cout << "Error" << std::endl;
 					return;
 				}
 				s.push(val1 / val2);
 			}
 		}
-		// invalid character
+		// Invalid character
 		else {
 			std::cout << "Error" << std::endl;
 			return;
 		}
 	}
 
-	// after all iterations there shouldnt be left any values
+	// Verify result
 	if (s.size() != 1) {
 		std::cout << "Error" << std::endl;
 		return;

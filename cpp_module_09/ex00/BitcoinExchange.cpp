@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:55:47 by aldinc            #+#    #+#             */
-/*   Updated: 2026/02/16 18:32:14 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/02/20 15:57:28 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) {
 BitcoinExchange::~BitcoinExchange() {}
 
 // --- Helper Functions ---
-//clears string first and last part empties
+// Trim whitespace
 std::string BitcoinExchange::_trim(const std::string& str) {
 	size_t first = str.find_first_not_of(" \t\r\n");
 	if (std::string::npos == first) return "";
@@ -38,7 +38,7 @@ std::string BitcoinExchange::_trim(const std::string& str) {
 	return str.substr(first, (last - first + 1));
 }
 
-//checks date format (YYYY-MM-DD) and logic
+// Validate date
 bool BitcoinExchange::_isValidDate(const std::string& date) {
 	if (date.length() != 10 || date[4] != '-' || date[7] != '-') return false;
 
@@ -60,15 +60,15 @@ bool BitcoinExchange::_isValidDate(const std::string& date) {
 	return true;
 }
 
-//is the value numeric/negative/1000 check
+// Validate numeric value
 bool BitcoinExchange::_isValidValue(const std::string& valueStr, float &value) {
 	char* end;
 	value = std::strtod(valueStr.c_str(), &end);
 
-	//if we couldnt changed the string complete numeric value check
+	// Verify fully numeric
 	if (*end != '\0' && end != valueStr.c_str() + valueStr.length()) return false;
 	
-	// strtod might return empty string, this checks that
+	// Check empty string
 	if (valueStr.empty()) return false;
 
 	return true;
@@ -83,7 +83,7 @@ void BitcoinExchange::_loadDatabase() {
 
 	std::string line;
 
-	//we dont take first line
+	// Skip header
 	std::getline(file, line);
 
 	while (std::getline(file, line)) {
@@ -107,7 +107,7 @@ void BitcoinExchange::run(const std::string& filename) {
 
 	std::string line;
 
-	//skip first line also in input.txt
+	// Skip header
 	std::getline(file, line);
 
 	while (std::getline(file, line)) {
@@ -140,7 +140,7 @@ void BitcoinExchange::run(const std::string& filename) {
 			continue;
 		}
 
-		// find closest date below
+		// Find closest date
 		std::map<std::string, float>::const_iterator it = _database.upper_bound(date);
 
 		if (it == _database.begin()) {
