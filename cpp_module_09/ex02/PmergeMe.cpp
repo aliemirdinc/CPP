@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:15:12 by aldinc            #+#    #+#             */
-/*   Updated: 2026/02/23 17:02:37 by aldinc           ###   ########.fr       */
+/*   Updated: 2026/02/25 17:34:40 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,15 @@ void PmergeMe::mergeInsertionSortVector(std::vector<int>& arr) {
 	std::vector<std::pair<int, int> > pairs;
 	for (size_t i = 0; i < arr.size(); i += 2) {
 		if (arr[i] > arr[i+1])
-			pairs.push_back(std::make_pair(arr[i], arr[i+1]));
-		else
 			pairs.push_back(std::make_pair(arr[i+1], arr[i]));
+		else
+			pairs.push_back(std::make_pair(arr[i], arr[i+1]));
 	}
 
 	// Sort winners
 	std::vector<int> largerElements;
 	for (size_t i = 0; i < pairs.size(); ++i) {
-		largerElements.push_back(pairs[i].first);
+		largerElements.push_back(pairs[i].second);
 	}
 
 	mergeInsertionSortVector(largerElements);
@@ -89,8 +89,8 @@ void PmergeMe::mergeInsertionSortVector(std::vector<int>& arr) {
 
 	// Insert first pending
 	for (size_t i = 0; i < pairs.size(); ++i) {
-		if (pairs[i].first == mainChain[0]) {
-			mainChain.insert(mainChain.begin(), pairs[i].second);
+		if (pairs[i].second == mainChain[0]) {
+			mainChain.insert(mainChain.begin(), pairs[i].first);
 			pairs.erase(pairs.begin() + i);
 			break;
 		}
@@ -100,8 +100,8 @@ void PmergeMe::mergeInsertionSortVector(std::vector<int>& arr) {
 	std::vector<int> orderedPending;
 	for (size_t i = 1; i < largerElements.size(); ++i) {
 		 for (size_t j = 0; j < pairs.size(); ++j) {
-			if (pairs[j].first == largerElements[i]) {
-				orderedPending.push_back(pairs[j].second);
+			if (pairs[j].second == largerElements[i]) {
+				orderedPending.push_back(pairs[j].first);
 				pairs.erase(pairs.begin() + j);
 				break;
 			}
@@ -112,21 +112,23 @@ void PmergeMe::mergeInsertionSortVector(std::vector<int>& arr) {
 	size_t pendingSize = orderedPending.size();
 	size_t jacobsthalIndex = 1; // J_1
 	size_t prevJacobsthal = 0;  // J_0
-	
+
 	size_t insertedCount = 0;
 
 	while (insertedCount < pendingSize) {
 		size_t nextJacobsthal = getJacobsthal(jacobsthalIndex + 2);
 		size_t limit = nextJacobsthal - 1;
-		if (limit >= pendingSize) limit = pendingSize - 1;
+		if (limit >= pendingSize)
+			limit = pendingSize - 1;
 
 		for (size_t i = limit; i > prevJacobsthal || (prevJacobsthal == 0 && i == 0); --i) {
 			 int val = orderedPending[i];
 			 binaryInsertVector(mainChain, val);
 			 insertedCount++;
-			 if (i == 0) break;
+			 if (i == 0)
+			 	break;
 		}
-		
+
 		prevJacobsthal = limit;
 		jacobsthalIndex++;
 	}
